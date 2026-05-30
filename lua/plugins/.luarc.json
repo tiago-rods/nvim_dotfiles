@@ -1,6 +1,10 @@
 {
     "diagnostics.globals": [
         "require",
-        "vim"
+        "vim",
+        "Snacks"
+    ],
+    "diagnostics.disable": [
+        "undefined-doc-name"
     ]
 }
