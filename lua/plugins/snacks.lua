@@ -4,9 +4,7 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
+        lazygit = { enabled = true, win = {width = 0.8, height = 0.8, border = rounded } },
         bigfile = { enabled = true },
         dashboard = { enabled = true },
         explorer = { enabled = true },
@@ -19,5 +17,10 @@ return {
         scroll = { enabled = true },
         statuscolumn = { enabled = true },
         words = { enabled = true },
+    },
+    keys = {
+    {"<leader>git", "<cmd>lua Snacks.lazygit()<CR>"},
+    { "<leader>gG", "<cmd>lua Snacks.lazygit(vim.fn.getcwd())<CR>" }
+    
     },
 }
