@@ -11,7 +11,7 @@ return {
     dependencies = { "williamboman/mason.nvim" },
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "ts_ls" },
+        ensure_installed = { "tsserver", "clangd", "pyright" },
         automatic_installation = true,
       })
     end,
@@ -27,7 +27,13 @@ return {
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      lspconfig.ts_ls.setup({
+      lspconfig.tsserver.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.clangd.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.pyright.setup({
         capabilities = capabilities,
       })
 
